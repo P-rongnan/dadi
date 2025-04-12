@@ -1,0 +1,5 @@
+@import '@/static/icon/index.css';
+/* stylelint-disable-next-line selector-type-no-unknown */
+page {
+    height: 100%;
+}
