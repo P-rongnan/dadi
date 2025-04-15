@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+import home from '../index/index.vue';
+import user from '@/pages/user/index.vue';
+import wode from '@/pages/wode/index.vue';
+
+const tabbar = ref('home');
+</script>
 <template>
     <view class="contain">
         <view class="content">
@@ -8,32 +16,61 @@
         <view class="tabbar">
             <wd-tabbar v-model="tabbar" custom-class="home_tabbar" fixed>
                 <wd-tabbar-item title="客服" icon="service" name="home">
-                    <!-- <template #icon>
-                        <wd-icon name="call" size="22px"></wd-icon>
-                    </template> -->
+                    <template #icon>
+                        <image
+                            v-if="tabbar == 'home'"
+                            class="imgImage"
+                            src="@/static/icon/top4.png"
+                            mode="scaleToFill"
+                        />
+                        <image
+                            v-else
+                            class="imgImage"
+                            src="@/static/icon/top3.png"
+                            mode="scaleToFill"
+                        />
+                    </template>
                 </wd-tabbar-item>
                 <wd-tabbar-item
+                    custom-class="home_tabbar"
                     title="爱心卡"
                     name="wode"
-                    icon="heart"
-                ></wd-tabbar-item>
-                <wd-tabbar-item
-                    title="我的"
-                    name="user"
-                    icon="user"
-                ></wd-tabbar-item>
+                >
+                    <template #icon>
+                        <image
+                            v-if="tabbar == 'wode'"
+                            class="imgImage"
+                            src="@/static/icon/top4.png"
+                            mode="scaleToFill"
+                        />
+                        <image
+                            v-else
+                            class="imgImage"
+                            src="@/static/icon/top3.png"
+                            mode="scaleToFill"
+                        />
+                    </template>
+                </wd-tabbar-item>
+                <wd-tabbar-item title="我的" name="user">
+                    <template #icon>
+                        <image
+                            v-if="tabbar == 'user'"
+                            class="imgImage"
+                            src="@/static/icon/top4.png"
+                            mode="scaleToFill"
+                        />
+                        <image
+                            v-else
+                            class="imgImage"
+                            src="@/static/icon/top3.png"
+                            mode="scaleToFill"
+                        />
+                    </template>
+                </wd-tabbar-item>
             </wd-tabbar>
         </view>
     </view>
 </template>
-<script lang="ts" setup>
-import { ref } from 'vue';
-import home from '../index/index.vue';
-import user from '@/pages/user/index.vue';
-import wode from '@/pages/wode/index.vue';
-const tabbar = ref('home');
-</script>
-
 <style lang="scss" scoped>
 :deep(.wd-tabbar) {
     z-index: 10 !important;
@@ -44,9 +81,17 @@ const tabbar = ref('home');
 }
 
 :deep(.home_tabbar) {
+    width: 100%;
     height: 170rpx !important; // 设置 tabbar 的总体高度
     padding-bottom: 10rpx !important;
     box-sizing: border-box;
+    .imgImage {
+        width: 50rpx;
+        height: 50rpx;
+        // width: 100%;
+
+        // height: 100%;
+    }
 }
 :deep(.wd-tabbar-item) {
     background: linear-gradient(
@@ -60,7 +105,7 @@ const tabbar = ref('home');
             PingFangSC,
             PingFang SC;
         font-weight: 500;
-        font-size: 23rpx;
+        font-size: 24rpx;
         line-height: 34rpx;
         margin-top: 15rpx;
         text-align: left;
@@ -72,6 +117,7 @@ const tabbar = ref('home');
             PingFangSC,
             PingFang SC;
         font-weight: 600;
+        font-size: 26rpx;
         color: #30c6ff;
         line-height: 34rpx;
         text-align: left;

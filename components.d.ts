@@ -7,10 +7,23 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    WdIcon: typeof import('wot-design-uni/components/wd-icon/wd-icon.vue')['default']
-    WdImg: typeof import('wot-design-uni/components/wd-img/wd-img.vue')['default']
+    PickerDIY: typeof import('./src/components/pickerDIY.vue')['default']
+    PickerIndex: typeof import('./src/components/pickerIndex.vue')['default']
+    PopupDiy: typeof import('./src/components/popupDiy.vue')['default']
+    UploadMany: typeof import('./src/components/uploadMany.vue')['default']
+    UploadOnly: typeof import('./src/components/uploadOnly.vue')['default']
+    WdButton: typeof import('wot-design-uni/components/wd-button/wd-button.vue')['default']
+    WdCell: typeof import('wot-design-uni/components/wd-cell/wd-cell.vue')['default']
+    WdCellGroup: typeof import('wot-design-uni/components/wd-cell-group/wd-cell-group.vue')['default']
+    WdForm: typeof import('wot-design-uni/components/wd-form/wd-form.vue')['default']
+    WdIndexAnchor: typeof import('wot-design-uni/components/wd-index-anchor/wd-index-anchor.vue')['default']
+    WdIndexBar: typeof import('wot-design-uni/components/wd-index-bar/wd-index-bar.vue')['default']
     WdInput: typeof import('wot-design-uni/components/wd-input/wd-input.vue')['default']
+    WdPicker: typeof import('wot-design-uni/components/wd-picker/wd-picker.vue')['default']
+    WdPopup: typeof import('wot-design-uni/components/wd-popup/wd-popup.vue')['default']
+    WdSearch: typeof import('wot-design-uni/components/wd-search/wd-search.vue')['default']
     WdTabbar: typeof import('wot-design-uni/components/wd-tabbar/wd-tabbar.vue')['default']
     WdTabbarItem: typeof import('wot-design-uni/components/wd-tabbar-item/wd-tabbar-item.vue')['default']
+    WdUpload: typeof import('wot-design-uni/components/wd-upload/wd-upload.vue')['default']
   }
 }
